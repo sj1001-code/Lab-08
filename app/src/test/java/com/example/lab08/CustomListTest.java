@@ -13,4 +13,11 @@ public class CustomListTest {
 
     }
 
+    @Test
+    void testDeleteCityReturnsFalseIfNotPresent() {
+        CustomList list = new CustomList();
+        City calgary = new City("Calgary", "AB");
+        assertFalse(list.deleteCity(calgary), "Should return false if city was not in the list");
+    }
+
 }
