@@ -20,4 +20,17 @@ public class CustomListTest {
         assertFalse(list.deleteCity(calgary), "Should return false if city was not in the list");
     }
 
+    @Test
+    void testCountCitiesReflectsNumberOfCities() {
+        CustomList list = new CustomList();
+
+        assertEquals(0, list.countCities(), "Empty list should have 0 cities");
+
+        list.addCity(new City("Edmonton", "AB"));
+        list.addCity(new City("Calgary", "AB"));
+        assertEquals(2, list.countCities(), "Should have 2 cities after adding 2");
+
+        list.deleteCity(new City("Edmonton", "AB"));
+        assertEquals(1, list.countCities(), "Should have 1 city after deleting 1");
+    }
 }
