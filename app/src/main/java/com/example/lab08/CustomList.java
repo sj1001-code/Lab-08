@@ -19,6 +19,11 @@ public class CustomList {
     public boolean deleteCity(City city) {
         return cities.remove(city);
     }
+
+    public int countCities() {
+        return cities.size();
+    }
+
     // Will be implemented later using TDD (leave blank for now)
     // public boolean hasCity(City city) { ... }
 }
